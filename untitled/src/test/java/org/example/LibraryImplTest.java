@@ -28,15 +28,31 @@ class LibraryImplTest {
     }
 
     @Test
+    void activatePremiumStatus(){
+        //given
+        LibraryImpl testLibrary = new LibraryImpl();
+        String testClientId = testLibrary.addClient("testFirstName", "testLastName", "testEmail");
+        //when
+        testLibrary.activatePremiumStatus(testClientId);
+        //then
+        assertTrue(testLibrary.clientMap.get(testClientId).isPremiumStatus());
+    }
+
+    @Test
     void removeClient() {
 
     }
 
     @Test
-    void addBookToClient() {
+    void addBook() {
     }
 
     @Test
-    void removeBookFromClient() {
+    void removeBook() {
+    }
+
+    @Test
+    void addBookToClient(){
+
     }
 }
