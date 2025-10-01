@@ -21,9 +21,10 @@ public class LibraryImpl implements Library {
     }
 
     @Override
-    public void addBook(String title, String author) {
+    public String addBook(String title, String author) {
         Book book = new  Book(title, author);
         bookMap.put(book.getBookId(), book);
+        return book.getBookId();
     }
 
     @Override
