@@ -7,6 +7,7 @@ public class LibraryImpl implements Library {
 
     Map<String, Client> clientMap = new HashMap<>();
     Map<String, Book> bookMap = new HashMap<>();
+    Map<String, String> booksOfClients  = new HashMap<>();
 
     @Override
     public String addClient(String firstName, String lastName, String email) {
@@ -34,9 +35,7 @@ public class LibraryImpl implements Library {
 
     @Override
     public void addBookToClient(String clientId, String bookId) {
-        Client client = clientMap.get(clientId);
-        Book book = bookMap.get(bookId);
-        client.addBookToClient(bookId);
+        booksOfClients.put(bookId, clientId);
     }
 
     public void activatePremiumStatus(String clientId){
